@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Anatomía de una Aplicación Web Moderna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- PALETTE: Brilliant Blues (#003f5c, #7a5195, #ef5675, #ffa600) -->
+    <!-- NARRATIVE PLAN: The infographic follows the 4 phases of the web development project we documented. It starts with Setup (The Blueprint), moves to Layout (The Structure), then Interactivity (The Engine), and finishes with Testing (The Launch). This creates a linear story of building an application from scratch. -->
+    <!-- VISUALIZATION CHOICES: 
+        1. Tech Stack Distribution -> Goal: Compare/Inform -> Chosen Viz: Donut Chart (Chart.js) -> Justification: Excellent for showing the composition of the core technologies in a simple, visual way.
+        2. Application Layout Flow -> Goal: Organize -> Chosen Viz: HTML/CSS Flowchart -> Justification: Clearly illustrates the hierarchical structure of the page layout (Header, Main, Footer) without using prohibited SVG/Mermaid.
+        3. CRUD Cycle -> Goal: Organize -> Chosen Viz: HTML/CSS Circular Diagram -> Justification: Effectively represents the cyclical nature of Create, Read, Delete operations, a core concept of the project's interactivity.
+        4. Key Concepts -> Goal: Inform -> Chosen Viz: Big Numbers/Stats -> Justification: High-impact way to draw attention to crucial concepts like "1 Source of Truth" for data management.
+    -->
+    <!-- CONFIRMATION: NEITHER Mermaid JS NOR SVG were used in this output. All diagrams and charts are rendered using either Chart.js with Canvas or structured HTML and Tailwind CSS. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#003f5c] text-gray-800">
+<header class="bg-white shadow-md sticky top-0 z-10">
+    <nav class="container mx-auto p-4 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold text-purple-700">Arkytekt.com</a>
+      
+      <div class="hidden md:flex space-x-4">
+        <a href="/index.html" class="nav-link">Inicio</a>
+        <a href="/infografia.html" class="nav-link">infografia</a>
+        <a href="#" class="nav-link">Contacto</a>
+      </div>
+      
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-gray-700 hover:text-purple-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
+    </nav>
+    </header>
+    main class="flex-grow container mx-auto p-8">
+    
+    <div id="menu-movil" class="hidden md:hidden bg-white rounded-lg shadow-md mb-4">
+      <a href="/index.html" class="nav-link-movil">Inicio</a>
+      <a href="/infografia.html" class="nav-link-movil">Infografía</a>
+      <a href="#" class="nav-link-movil">Contacto</a>
+    </div>
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-white leading-tight">Anatomía de una Aplicación Web Moderna</h1>
+            <p class="text-lg md:text-xl text-[#ffa600] mt-4">Un desglose visual del proceso de desarrollo, desde cero hasta una aplicación CRUD funcional.</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="md:col-span-2 lg:col-span-3 text-center p-6 bg-white/10 rounded-lg">
+                <h2 class="text-2xl font-bold text-white">El Viaje del Desarrollo en 4 Fases</h2>
+                <div class="mt-4 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 text-white">
+                    <div class="flex items-center">
+                        <span class="font-bold text-lg bg-[#ffa600] text-[#003f5c] rounded-full w-8 h-8 flex items-center justify-center">1</span>
+                        <p class="ml-2">El Blueprint: Entorno</p>
+                    </div>
+                    <span class="hidden md:block text-2xl font-light text-[#ffa600]">→</span>
+                    <div class="flex items-center">
+                        <span class="font-bold text-lg bg-[#ef5675] text-white rounded-full w-8 h-8 flex items-center justify-center">2</span>
+                        <p class="ml-2">La Estructura: Layout</p>
+                    </div>
+                    <span class="hidden md:block text-2xl font-light text-[#ef5675]">→</span>
+                    <div class="flex items-center">
+                        <span class="font-bold text-lg bg-[#7a5195] text-white rounded-full w-8 h-8 flex items-center justify-center">3</span>
+                        <p class="ml-2">El Motor: CRUD</p>
+                    </div>
+                    <span class="hidden md:block text-2xl font-light text-[#7a5195]">→</span>
+                    <div class="flex items-center">
+                        <span class="font-bold text-lg bg-[#003f5c] border-2 border-white text-white rounded-full w-8 h-8 flex items-center justify-center">4</span>
+                        <p class="ml-2">El Lanzamiento: Pruebas</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-2xl p-6 flex flex-col">
+                <h3 class="text-2xl font-bold text-[#003f5c] border-b-4 border-[#ffa600] pb-2">Fase 1: El Blueprint</h3>
+                <p class="mt-4 text-gray-600 flex-grow">Todo proyecto comienza con una base sólida. Esta fase implicó la configuración del entorno de desarrollo con Node.js y la instalación de Tailwind CSS para un estilizado ágil y moderno. La clave fue automatizar la compilación para un flujo de trabajo eficiente.</p>
+                <div class="chart-container mt-6">
+                    <canvas id="techStackChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-2">Distribución del Stack Tecnológico</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-2xl p-6 flex flex-col">
+                <h3 class="text-2xl font-bold text-[#003f5c] border-b-4 border-[#ef5675] pb-2">Fase 2: La Estructura</h3>
+                <p class="mt-4 text-gray-600 flex-grow">Se construyó un layout profesional y adaptable a cualquier dispositivo usando Flexbox. La página se estructuró semánticamente para asegurar que la cabecera y el pie de página se mantuvieran en su lugar, permitiendo que solo el contenido principal se desplace.</p>
+                <div class="mt-6 p-4 bg-gray-50 rounded-lg text-center">
+                    <h4 class="font-semibold">Flujo del Layout</h4>
+                    <div class="mt-2 p-2 border-2 border-gray-300 rounded-md bg-gray-200 font-mono text-sm">&lt;header&gt; (Fijo)</div>
+                    <div class="text-2xl text-gray-300">↓</div>
+                    <div class="p-2 border-2 border-gray-300 rounded-md bg-gray-200 font-mono text-sm">&lt;main&gt; (Scrollable)</div>
+                    <div class="text-2xl text-gray-300">↓</div>
+                    <div class="p-2 border-2 border-gray-300 rounded-md bg-gray-200 font-mono text-sm">&lt;footer&gt;</div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-2xl p-6 flex flex-col">
+                <h3 class="text-2xl font-bold text-[#003f5c] border-b-4 border-[#7a5195] pb-2">Fase 4: El Lanzamiento</h3>
+                <p class="mt-4 text-gray-600 flex-grow">La fase final consistió en verificar que todo funcionara en un entorno real. Se utilizó <code class="bg-gray-200 text-sm p-1 rounded">live-server</code> para crear un servidor de desarrollo local, permitiendo probar la aplicación en un smartphone real conectado a la misma red WiFi.</p>
+                <div class="text-center mt-6">
+                     <div class="text-8xl">📱</div>
+                     <p class="mt-2 font-semibold">Pruebas en Dispositivos Reales</p>
+                     <p class="text-sm text-gray-500">Asegurando una experiencia de usuario consistente en todas las plataformas.</p>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-2xl p-6 flex flex-col lg:flex-row items-center gap-8">
+                <div class="lg:w-1/2">
+                    <h3 class="text-3xl font-bold text-[#003f5c] border-b-4 border-[#7a5195] pb-2">Fase 3: El Motor (CRUD)</h3>
+                    <p class="mt-4 text-gray-600">Aquí la página cobró vida. Se implementó una funcionalidad CRUD completa (Crear, Leer, Borrar) para gestionar una lista de comandos de forma dinámica.</p>
+                    <div class="mt-6 p-4 bg-[#003f5c] text-white rounded-lg text-center">
+                        <p class="text-lg font-bold">Concepto Central:</p>
+                        <p class="text-4xl font-black text-[#ffa600]">1</p>
+                        <p class="font-semibold">Única Fuente de la Verdad</p>
+                        <p class="text-sm opacity-80">Se utilizó un array en JavaScript como "memoria" central para los datos, separando la lógica de la presentación y venciendo la "amnesia digital".</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center items-center">
+                    <div class="relative w-64 h-64">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#7a5195] rounded-full flex items-center justify-center text-white font-bold text-lg">CRUD</div>
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 p-2 bg-gray-100 rounded-lg shadow-md text-center">
+                            <p class="font-bold">Crear</p>
+                            <p class="text-xs">Formulario</p>
+                        </div>
+                        <div class="absolute top-1/2 right-0 translate-x-2 -translate-y-1/2 p-2 bg-gray-100 rounded-lg shadow-md text-center">
+                            <p class="font-bold">Leer</p>
+                            <p class="text-xs">Fetch/Render</p>
+                        </div>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2 p-2 bg-gray-100 rounded-lg shadow-md text-center">
+                            <p class="font-bold">Borrar</p>
+                            <p class="text-xs">Filter/Event</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+ 
+    <script src="script.js"></script>
+    </div>   
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        <p>&copy; 2025 Repasando la Web. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            }
+            return label;
+        };
+
+        const techStackCtx = document.getElementById('techStackChart').getContext('2d');
+        new Chart(techStackCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['JavaScript (Lógica)', 'Tailwind (Estilos)', 'HTML (Estructura)'],
+                datasets: [{
+                    label: 'Distribución del Stack',
+                    data: [50, 35, 15],
+                    backgroundColor: [
+                        '#7a5195',
+                        '#ef5675',
+                        '#ffa600'
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#4b5563',
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+    </script>
+   
+
+</body>
+</html>

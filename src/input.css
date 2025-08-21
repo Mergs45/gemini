@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- CLASE PARA EL CÓDIGO EN PÍLDORA GRISES--- */
+.code-pill{
+    @apply bg-gray-200 text-purple-700 font-semibold px-2 py-1 rounded-md mr-2;
+}
+
+/* --- CLASE PARA EL MENÚ DE ESCRITORIO --- */
+.nav-link {
+  @apply text-gray-700 hover:text-purple-700 transition-colors duration-300;
+}
+
+/* --- CLASE PARA EL MENÚ MÓVIL --- */
+.nav-link-movil {
+  @apply block p-4 text-gray-700 hover:bg-gray-100;
+}
