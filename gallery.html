@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería 3D - Arkytekt.com</title> 
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen bg-gray-100">
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <nav class="container mx-auto p-4 flex justify-between items-center">
+          <a href="index.html" class="text-xl font-bold text-purple-700">Arkytekt.com</a>
+          
+          <div class="hidden md:flex space-x-4">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="infografia.html" class="nav-link">Infografía</a>
+            <a href="gallery.html" class="nav-link font-bold text-purple-700">Galería 3D</a>
+          </div>
+          
+          <div class="md:hidden">
+            <button id="menu-btn" class="text-gray-700 hover:text-purple-700">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+          </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto p-8">
+        
+        <div id="menu-movil" class="hidden md:hidden bg-white rounded-lg shadow-md mb-4">
+          <a href="index.html" class="nav-link-movil">Inicio</a>
+          <a href="infografia.html" class="nav-link-movil">Infografía</a>
+          <a href="gallery.html" class="nav-link-movil">Galería 3D</a>
+        </div>
+
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-purple-600">Galería de Trabajos 3D</h1>
+            <p class="text-lg text-gray-700 mt-2">Una selección de proyectos y prácticas de modelado y renderizado.</p>
+        </div>
+
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="group cursor-pointer" data-img-src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/be4943a4-96ad-4f31-a16b-512a56ee6d3c/dfpypvt-4ccae326-02d3-4ba9-942a-fcd87044e355.png/v1/fill/w_1192,h_670,q_70,strp/isometric_3d_room_by_mergs45_dfpypvt-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYmU0OTQzYTQtOTZhZC00ZjMxLWExNmItNTEyYTU2ZWU2ZDNjXC9kZnB5cHZ0LTRjY2FlMzI2LTAyZDMtNGJhOS05NDJhLWZjZDg3MDQ0ZTM1NS5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.WPv3NV6AYyHVg038UpKXyyrz6aSCnuq3KwNYjCjKN_M" data-title="Isometric 3D Room" data-description="Una habitación isométrica detallada, mostrando habilidades en modelado de props y composición de escenas.">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/be4943a4-96ad-4f31-a16b-512a56ee6d3c/dfpypvt-4ccae326-02d3-4ba9-942a-fcd87044e355.png/v1/fill/w_1192,h_670,q_70,strp/isometric_3d_room_by_mergs45_dfpypvt-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYmU0OTQzYTQtOTZhZC00ZjMxLWExNmItNTEyYTU2ZWU2ZDNjXC9kZnB5cHZ0LTRjY2FlMzI2LTAyZDMtNGJhOS05NDJhLWZjZDg3MDQ0ZTM1NS5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.WPv3NV6AYyHVg038UpKXyyrz6aSCnuq3KwNYjCjKN_M" alt="Isometric 3D Room" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/800x600/eeeeee/cccccc?text=Imagen+no+disponible';">
+                </div>
+                <h3 class="mt-4 text-lg font-bold text-gray-800">Isometric 3D Room</h3>
+                <p class="text-sm text-gray-600">Composición de Escena</p>
+            </div>
+
+            <div class="group cursor-pointer" data-img-src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/be4943a4-96ad-4f31-a16b-512a56ee6d3c/dk3dqxk-6f53c238-4d46-4d24-89a5-1ab76519b393.png/v1/fill/w_1192,h_670,q_70,strp/apartment_render_by_mergs45_dk3dqxk-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYmU0OTQzYTQtOTZhZC00ZjMxLWExNmItNTEyYTU2ZWU2ZDNjXC9kazNkcXhrLTZmNTNjMjM4LTRkNDYtNGQyNC04OWE1LTFhYjc2NTE5YjM5My5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.pI8rw3AXocBJxU1QxwLNfq1tyz7zwXggwgRJT4JVUWE" data-title="Apartment" data-description="Renderizado de un apartamento moderno con atención al detalle en texturas y iluminación.">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/be4943a4-96ad-4f31-a16b-512a56ee6d3c/dk3dqxk-6f53c238-4d46-4d24-89a5-1ab76519b393.png/v1/fill/w_1192,h_670,q_70,strp/apartment_render_by_mergs45_dk3dqxk-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYmU0OTQzYTQtOTZhZC00ZjMxLWExNmItNTEyYTU2ZWU2ZDNjXC9kazNkcXhrLTZmNTNjMjM4LTRkNDYtNGQyNC04OWE1LTFhYjc2NTE5YjM5My5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.pI8rw3AXocBJxU1QxwLNfq1tyz7zwXggwgRJT4JVUWE" alt="Apartment" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/800x600/eeeeee/cccccc?text=Imagen+no+disponible';">
+                </div>
+                <h3 class="mt-4 text-lg font-bold text-gray-800">Apartment</h3>
+                <p class="text-sm text-gray-600">Iluminación y detalles arquitectónicos</p>
+            </div>
+            
+            <div class="group cursor-pointer" data-img-src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/be4943a4-96ad-4f31-a16b-512a56ee6d3c/dgye4yu-00e0dc1d-f218-4bcc-aa17-67edb9784158.png/v1/fill/w_1192,h_670,q_70,strp/sanrio_friends_by_mergs45_dgye4yu-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYmU0OTQzYTQtOTZhZC00ZjMxLWExNmItNTEyYTU2ZWU2ZDNjXC9kZ3llNHl1LTAwZTBkYzFkLWYyMTgtNGJjYy1hYTE3LTY3ZWRiOTc4NDE1OC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.GaIQzUl7Ig5eBDFsrHbAzlQLuopX4NqaftPLCrXCOTI" data-title="Sanrio Friends" data-description="Modelado de personajes estilizados del universo de Sanrio, con un enfoque en formas limpias y colores vibrantes.">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/be4943a4-96ad-4f31-a16b-512a56ee6d3c/dgye4yu-00e0dc1d-f218-4bcc-aa17-67edb9784158.png/v1/fill/w_1192,h_670,q_70,strp/sanrio_friends_by_mergs45_dgye4yu-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYmU0OTQzYTQtOTZhZC00ZjMxLWExNmItNTEyYTU2ZWU2ZDNjXC9kZ3llNHl1LTAwZTBkYzFkLWYyMTgtNGJjYy1hYTE3LTY3ZWRiOTc4NDE1OC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.GaIQzUl7Ig5eBDFsrHbAzlQLuopX4NqaftPLCrXCOTI" alt="Sanrio Friends" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/800x600/eeeeee/cccccc?text=Imagen+no+disponible';">
+                </div>
+                <h3 class="mt-4 text-lg font-bold text-gray-800">Sanrio Friends</h3>
+                <p class="text-sm text-gray-600">Modelado de Personajes</p>
+            </div>
+
+            <div class="group cursor-pointer" data-img-src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/be4943a4-96ad-4f31-a16b-512a56ee6d3c/dfl0hy6-99c044ce-6d1f-4bde-b5ca-a201fc26bf0f.png/v1/fill/w_1192,h_670,q_70,strp/snow_xmas_tree_by_mergs45_dfl0hy6-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYmU0OTQzYTQtOTZhZC00ZjMxLWExNmItNTEyYTU2ZWU2ZDNjXC9kZmwwaHk2LTk5YzA0NGNlLTZkMWYtNGJkZS1iNWNhLWEyMDFmYzI2YmYwZi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.hPgJ_2hZo1O_r2k6qlPHyWepBcAZENuoLx_pQ1GDlnM" data-title="Xmas Tree" data-description="Modelado de un árbol de Navidad estilizado, con un enfoque en la iluminación y los detalles decorativos.">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/be4943a4-96ad-4f31-a16b-512a56ee6d3c/dfl0hy6-99c044ce-6d1f-4bde-b5ca-a201fc26bf0f.png/v1/fill/w_1192,h_670,q_70,strp/snow_xmas_tree_by_mergs45_dfl0hy6-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYmU0OTQzYTQtOTZhZC00ZjMxLWExNmItNTEyYTU2ZWU2ZDNjXC9kZmwwaHk2LTk5YzA0NGNlLTZkMWYtNGJkZS1iNWNhLWEyMDFmYzI2YmYwZi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.hPgJ_2hZo1O_r2k6qlPHyWepBcAZENuoLx_pQ1GDlnM" alt="Xmas Tree" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/800x600/eeeeee/cccccc?text=Imagen+no+disponible';">
+                </div>
+                <h3 class="mt-4 text-lg font-bold text-gray-800">Xmas Tree</h3>
+                <p class="text-sm text-gray-600">Escena de Navidad</p>
+            </div>
+
+            <div class="group cursor-pointer" data-img-src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/be4943a4-96ad-4f31-a16b-512a56ee6d3c/dk3dss6-746c261a-85d6-4159-9502-1587c2996547.png/v1/fill/w_1192,h_670,q_70,strp/racoon_box_by_mergs45_dk3dss6-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYmU0OTQzYTQtOTZhZC00ZjMxLWExNmItNTEyYTU2ZWU2ZDNjXC9kazNkc3M2LTc0NmMyNjFhLTg1ZDYtNDE1OS05NTAyLTE1ODdjMjk5NjU0Ny5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.rj7GAXz4DzmmIoN620RZUSeHpFonFSSRJ5VWDCEY0Qs" data-title="Racoon 3D" data-description="Modelado de un mapache en 3D tipo Minecraft con empaque para tiendas.">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/be4943a4-96ad-4f31-a16b-512a56ee6d3c/dk3dss6-746c261a-85d6-4159-9502-1587c2996547.png/v1/fill/w_1192,h_670,q_70,strp/racoon_box_by_mergs45_dk3dss6-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYmU0OTQzYTQtOTZhZC00ZjMxLWExNmItNTEyYTU2ZWU2ZDNjXC9kazNkc3M2LTc0NmMyNjFhLTg1ZDYtNDE1OS05NTAyLTE1ODdjMjk5NjU0Ny5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.rj7GAXz4DzmmIoN620RZUSeHpFonFSSRJ5VWDCEY0Qs" alt="Racoon 3D" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/800x600/eeeeee/cccccc?text=Imagen+no+disponible';">
+                </div>
+                <h3 class="mt-4 text-lg font-bold text-gray-800">Racoon 3D</h3>
+                <p class="text-sm text-gray-600">Personaje animal en 3D</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none">
+        <div class="modal-content bg-white rounded-lg shadow-2xl max-w-4xl max-h-full overflow-auto transform scale-95">
+            <div class="p-4 text-right">
+                <button id="modal-close-btn" class="text-2xl font-bold text-gray-600 hover:text-black">&times;</button>
+            </div>
+            <img id="modal-img" src="" alt="Vista ampliada" class="w-full h-auto object-contain" style="max-height: 75vh;">
+            <div class="p-6">
+                <h3 id="modal-title" class="text-2xl font-bold text-gray-800"></h3>
+                <p id="modal-description" class="mt-2 text-gray-600"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        <p>&copy; 2025 Repasando la Web. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
